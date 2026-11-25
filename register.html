@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#faf9ff">
+    <meta name="description" content="Create your SkillSwap student profile and start sharing skills with your community.">
+    <title>Join SkillSwap — Create your profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="register-page">
+    <header class="site-header">
+        <nav class="navbar register-navbar" aria-label="Main navigation">
+            <a class="logo" href="index.html" aria-label="SkillSwap home">
+                <span class="logo-mark" aria-hidden="true">S</span>
+                Skill<span>Swap</span>
+            </a>
+            <a class="register-back-link" href="index.html"><span aria-hidden="true">←</span> Back to home</a>
+        </nav>
+    </header>
+
+    <main class="register-main">
+        <section class="register-intro">
+            <span class="section-kicker">Your next chapter starts here</span>
+            <h1>Bring your skills.<br><span>Find your people.</span></h1>
+            <p>Create your student profile and meet a community that’s ready to learn from you — and teach you something back.</p>
+            <div class="register-note">
+                <span class="register-note-icon" aria-hidden="true">✳</span>
+                <div><strong>Good at something?</strong><br><span>That’s all it takes to get started.</span></div>
+            </div>
+            <div class="register-art" aria-hidden="true">
+                <div class="register-art-orbit"></div>
+                <div class="register-art-card register-art-card-one"><span>✦</span><div><b>Share a skill</b><small>Your knowledge matters</small></div></div>
+                <div class="register-art-card register-art-card-two"><span>↔</span><div><b>Learn together</b><small>Grow your way</small></div></div>
+                <div class="register-art-center"><span>SS</span></div>
+            </div>
+        </section>
+
+        <section class="register-panel" aria-labelledby="register-title">
+            <div class="register-panel-heading">
+                <span class="register-step-label">STUDENT PROFILE · 1 OF 1</span>
+                <h2 id="register-title">Create your profile</h2>
+                <p>Tell us a little about yourself and what you’d like to swap.</p>
+            </div>
+
+            <div class="register-feedback register-success" id="register-success" role="status" aria-live="polite" hidden>
+                <span class="feedback-icon" aria-hidden="true">✓</span>
+                <div><strong>You’re on the list!</strong><p>Your SkillSwap profile was saved on this device.</p><a class="register-dashboard-link" href="dashboard.html">Go to your dashboard →</a></div>
+            </div>
+            <div class="register-feedback register-error" id="register-error" role="alert" hidden></div>
+
+            <form id="registration-form" novalidate>
+                <div class="register-field">
+                    <label for="full-name">Full name <span>*</span></label>
+                    <input id="full-name" name="fullName" type="text" autocomplete="name" placeholder="e.g. Jamie Rivera" maxlength="80" required>
+                </div>
+
+                <div class="register-field">
+                    <label for="email">Email address <span>*</span></label>
+                    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@college.edu" maxlength="254" required>
+                </div>
+
+                <div class="register-field">
+                    <label for="college">College name <span>*</span></label>
+                    <input id="college" name="college" type="text" autocomplete="organization" placeholder="Your college or university" maxlength="120" required>
+                </div>
+
+                <div class="register-field">
+                    <label for="department">Department <span>*</span></label>
+                    <select id="department" name="department" required>
+                        <option value="" selected disabled>Select your department</option>
+                        <option>Arts &amp; Humanities</option>
+                        <option>Business &amp; Management</option>
+                        <option>Computer Science &amp; IT</option>
+                        <option>Design &amp; Creative Arts</option>
+                        <option>Education</option>
+                        <option>Engineering</option>
+                        <option>Health &amp; Life Sciences</option>
+                        <option>Law</option>
+                        <option>Media &amp; Communication</option>
+                        <option>Natural Sciences</option>
+                        <option>Social Sciences</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <fieldset class="register-field skill-field">
+                    <legend>Skills I can teach <span>*</span></legend>
+                    <p class="field-hint">Add one or more skills. Press Enter or use the Add button.</p>
+                    <div class="skill-entry">
+                        <input id="teach-input" type="text" placeholder="e.g. Web design" maxlength="40" aria-label="Enter a skill you can teach" aria-describedby="teach-hint teach-error" autocomplete="off">
+                        <button class="skill-add-btn" type="button" data-add-skill="teach">Add</button>
+                    </div>
+                    <div class="skill-chip-list" id="teach-list" aria-label="Skills you can teach"></div>
+                    <span class="field-validation" id="teach-error"></span>
+                    <span class="visually-hidden" id="teach-hint">Type a skill and press Enter or Add to select it.</span>
+                </fieldset>
+
+                <fieldset class="register-field skill-field">
+                    <legend>Skills I want to learn <span>*</span></legend>
+                    <p class="field-hint">What are you curious about?</p>
+                    <div class="skill-entry">
+                        <input id="learn-input" type="text" placeholder="e.g. Photography" maxlength="40" aria-label="Enter a skill you want to learn" aria-describedby="learn-hint learn-error" autocomplete="off">
+                        <button class="skill-add-btn" type="button" data-add-skill="learn">Add</button>
+                    </div>
+                    <div class="skill-chip-list" id="learn-list" aria-label="Skills you want to learn"></div>
+                    <span class="field-validation" id="learn-error"></span>
+                    <span class="visually-hidden" id="learn-hint">Type a skill and press Enter or Add to select it.</span>
+                </fieldset>
+
+                <div class="register-field picture-field">
+                    <label for="profile-picture">Profile picture <span>*</span></label>
+                    <p class="field-hint">JPG, PNG, GIF or WebP · up to 1 MB</p>
+                    <div class="picture-upload">
+                        <div class="picture-preview" id="picture-preview" aria-hidden="true">
+                            <span id="picture-placeholder">+</span>
+                            <img id="picture-image" alt="" hidden>
+                        </div>
+                        <div class="picture-input-wrap">
+                            <input id="profile-picture" name="profilePicture" type="file" accept="image/jpeg,image/png,image/gif,image/webp" required aria-describedby="picture-hint">
+                            <span class="visually-hidden" id="picture-hint">Choose an image file no larger than 1 megabyte.</span>
+                            <span class="picture-caption">Choose a clear photo so your community can recognize you.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="register-privacy">Your profile details are saved in this browser on this device.</p>
+                <button class="primary-btn register-submit" type="submit">Create my profile <span aria-hidden="true">→</span></button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="register-footer">
+        <a class="logo footer-logo" href="index.html"><span class="logo-mark" aria-hidden="true">S</span>Skill<span>Swap</span></a>
+        <p>Exchange skills, not money. <span>© 2026 SkillSwap</span></p>
+    </footer>
+
+    <script src="register.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#faf9ff">
+    <meta name="description" content="Review and manage your SkillSwap exchange requests.">
+    <title>Exchange requests — SkillSwap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="requests-page">
+    <header class="site-header">
+        <nav class="navbar dashboard-navbar requests-navbar" aria-label="Requests navigation">
+            <a class="logo" href="index.html" aria-label="SkillSwap home">
+                <span class="logo-mark" aria-hidden="true">S</span>
+                Skill<span>Swap</span>
+            </a>
+            <div class="dashboard-nav-links">
+                <a href="index.html#skills">Explore</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a class="active" href="requests.html" aria-current="page">Requests</a>
+            </div>
+            <button class="dashboard-logout" id="requests-logout" type="button"><span aria-hidden="true">↗</span> Log out</button>
+        </nav>
+    </header>
+
+    <main class="requests-shell">
+        <div class="requests-alert" id="requests-alert" role="alert" hidden></div>
+        <div class="requests-notice" id="requests-notice" role="status" aria-live="polite" hidden></div>
+
+        <section class="requests-heading">
+            <div>
+                <span class="section-kicker">MAKE SOMETHING TOGETHER</span>
+                <h1>Exchange <span>requests.</span></h1>
+                <p>Meet someone new, share what you know, and learn something in return.</p>
+            </div>
+            <div class="requests-user-chip" id="requests-user-chip" hidden>
+                <span class="requests-user-dot"></span>
+                <span>Requests for <strong id="requests-user-name"></strong></span>
+            </div>
+        </section>
+
+        <section class="request-overview" aria-label="Request summary">
+            <div class="request-overview-copy">
+                <span class="request-overview-icon" aria-hidden="true">✦</span>
+                <div><strong id="request-overview-count">0</strong><span>requests in your inbox</span></div>
+            </div>
+            <a href="index.html#skills" class="request-explore-link">Explore more skills <span aria-hidden="true">→</span></a>
+        </section>
+
+        <section class="request-management" aria-label="Manage exchange requests">
+            <div class="request-toolbar">
+                <div class="request-filter-tabs" role="group" aria-label="Filter requests by status">
+                    <button class="request-filter active" type="button" data-request-filter="all" aria-pressed="true">All requests <span id="request-count-all">0</span></button>
+                    <button class="request-filter" type="button" data-request-filter="pending" aria-pressed="false">Pending <span id="request-count-pending">0</span></button>
+                    <button class="request-filter" type="button" data-request-filter="accepted" aria-pressed="false">Accepted <span id="request-count-accepted">0</span></button>
+                    <button class="request-filter" type="button" data-request-filter="rejected" aria-pressed="false">Rejected <span id="request-count-rejected">0</span></button>
+                </div>
+                <p class="request-showing" id="request-showing" aria-live="polite"></p>
+            </div>
+
+            <div class="request-list" id="request-list" aria-live="polite"></div>
+        </section>
+        <section class="requests-empty" id="requests-empty" aria-live="polite" hidden>
+            <div class="requests-empty-mark" aria-hidden="true">✳</div>
+            <h2 id="requests-empty-title">You’re all caught up.</h2>
+            <p id="requests-empty-copy">When someone wants to swap skills with you, their request will show up here.</p>
+            <a class="primary-btn" id="requests-empty-action" href="index.html#skills">Explore skills <span aria-hidden="true">→</span></a>
+        </section>
+    </main>
+
+    <footer class="register-footer dashboard-footer">
+        <a class="logo footer-logo" href="index.html"><span class="logo-mark" aria-hidden="true">S</span>Skill<span>Swap</span></a>
+        <p>Exchange skills, not money. <span>© 2026 SkillSwap</span></p>
+    </footer>
+
+    <script src="requests.js"></script>
+</body>
+</html>

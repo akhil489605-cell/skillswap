@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#faf9ff">
+    <meta name="description" content="Your SkillSwap student dashboard: manage your skills and find your next exchange.">
+    <title>Your dashboard — SkillSwap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-page">
+    <header class="site-header">
+        <nav class="navbar dashboard-navbar" aria-label="Dashboard navigation">
+            <a class="logo" href="index.html" aria-label="SkillSwap home">
+                <span class="logo-mark" aria-hidden="true">S</span>
+                Skill<span>Swap</span>
+            </a>
+            <div class="dashboard-nav-links">
+                <a class="active" href="#overview">Overview</a>
+                <a href="#my-skills">My skills</a>
+                <a href="#discover">Discover</a>
+                <a href="requests.html">Requests</a>
+            </div>
+            <button class="dashboard-logout" id="logout-button" type="button"><span aria-hidden="true">↗</span> Log out</button>
+        </nav>
+    </header>
+
+    <main class="dashboard-shell">
+        <div class="dashboard-alert" id="dashboard-alert" role="alert" hidden></div>
+
+        <section class="dashboard-empty" id="dashboard-empty" aria-live="polite" hidden>
+            <div class="empty-mark" aria-hidden="true">S</div>
+            <span class="section-kicker">Your SkillSwap space</span>
+            <h1 id="empty-title">Your dashboard is waiting.</h1>
+            <p id="empty-copy">Create a student profile to start sharing skills and find your first exchange.</p>
+            <a class="primary-btn" id="empty-action" href="register.html">Create a profile <span aria-hidden="true">→</span></a>
+            <a class="empty-home-link" href="index.html">Back to SkillSwap home</a>
+        </section>
+
+        <div id="dashboard-content" hidden>
+            <section class="dashboard-welcome" id="overview">
+                <div class="welcome-copy">
+                    <span class="section-kicker">YOUR STUDENT DASHBOARD</span>
+                    <h1>Welcome back,<br><span id="student-name">student</span><span class="welcome-period">.</span></h1>
+                    <p class="welcome-school"><span class="school-icon" aria-hidden="true">⌂</span><span id="student-college"></span><span class="school-divider">·</span><span id="student-department"></span></p>
+                    <a class="welcome-explore-link" href="#discover">Find your next skill swap <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="welcome-profile" aria-label="Your profile picture">
+                    <div class="welcome-avatar">
+                        <span id="student-initials" aria-hidden="true"></span>
+                        <img id="student-picture" alt="">
+                    </div>
+                    <span class="welcome-sparkle" aria-hidden="true">✦</span>
+                    <div class="welcome-caption"><span></span> Your profile is ready</div>
+                </div>
+            </section>
+
+            <section class="dashboard-metrics" aria-label="Your dashboard summary">
+                <article class="dashboard-metric">
+                    <span class="metric-icon metric-purple" aria-hidden="true">✳</span>
+                    <div><strong id="teach-count">0</strong><span>skills to share</span></div>
+                </article>
+                <article class="dashboard-metric">
+                    <span class="metric-icon metric-peach" aria-hidden="true">⌕</span>
+                    <div><strong id="learn-count">0</strong><span>skills to discover</span></div>
+                </article>
+                <article class="dashboard-metric">
+                    <span class="metric-icon metric-mint" aria-hidden="true">↗</span>
+                    <div><strong id="request-count">0</strong><span>requests sent</span></div>
+                </article>
+            </section>
+
+            <section class="dashboard-section" id="my-skills">
+                <div class="dashboard-section-heading">
+                    <div><span class="section-kicker">A little give, a lot to gain</span><h2>Your skill exchange</h2></div>
+                    <a href="register.html" class="dashboard-edit-link">Update profile <span aria-hidden="true">↗</span></a>
+                </div>
+                <div class="my-skills-grid">
+                    <article class="my-skill-panel teach-panel">
+                        <div class="skill-panel-heading"><span class="skill-panel-icon" aria-hidden="true">↗</span><div><h3>Skills I can teach</h3><p>Things you’re happy to share</p></div></div>
+                        <div class="dashboard-skill-list" id="teach-skills"></div>
+                    </article>
+                    <article class="my-skill-panel learn-panel">
+                        <div class="skill-panel-heading"><span class="skill-panel-icon" aria-hidden="true">✦</span><div><h3>Skills I want to learn</h3><p>Things you’re curious about</p></div></div>
+                        <div class="dashboard-skill-list" id="learn-skills"></div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="dashboard-section recommendations-section" id="discover">
+                <div class="dashboard-section-heading">
+                    <div><span class="section-kicker">Made for your curiosity</span><h2>People you might click with</h2></div>
+                    <span class="recommendation-count" id="recommendation-count"></span>
+                </div>
+                <div class="recommendation-grid" id="recommendations"></div>
+                <div class="recommendation-empty" id="recommendation-empty" hidden>
+                    <span aria-hidden="true">✳</span>
+                    <div><strong>Your community is just getting started.</strong><p>When other students join SkillSwap, you’ll find their profiles here.</p></div>
+                    <a href="register.html">Invite a friend <span aria-hidden="true">→</span></a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="register-footer dashboard-footer">
+        <a class="logo footer-logo" href="index.html"><span class="logo-mark" aria-hidden="true">S</span>Skill<span>Swap</span></a>
+        <p>Exchange skills, not money. <span>© 2026 SkillSwap</span></p>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
